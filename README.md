@@ -16,6 +16,7 @@ scikit-image==0.21.0
 ```
 
 ## Datasets
+All datasets can be downloaded from the following link:
 
 [TarTanAir](https://github.com/castacks/tartanair_tools)
 
@@ -23,6 +24,7 @@ scikit-image==0.21.0
 
 [DynamicReplica](https://dynamic-stereo.github.io/)
 
+Additionally, we provide a DyDToF test subset in the ``'dataset'`` folder for quick implementation. 
 
 ## Training
 
