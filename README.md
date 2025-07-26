@@ -33,7 +33,6 @@ cd STDNet
 mkdir -p experiment/SRDNet_$scale$/MAE_best
 
 python -m torch.distributed.launch --nproc_per_node 2 train.py --scale 4 --result_root 'experiment/SRDNet_$scale$' --result_root_MAE 'experiment/SRDNet_$scale$/MAE_best'
-
 ```
 
 ## Testing
