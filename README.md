@@ -1,4 +1,3 @@
-<p align="center">
 <h2 align="center"> SpatioTemporal Difference Network for Video Depth Super-Resolution </h2>
 
 ## Dependencies
