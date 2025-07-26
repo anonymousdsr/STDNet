@@ -25,7 +25,7 @@ data_transform = transforms.Compose([transforms.ToTensor()])
 
 dataset_name = opt.root_dir.split('/')[-1]
  
-dataset = DyDToF_Dataset(root_path="./dataset/DyDToF/", train=False, txt_file="./data/dydtof_list/school_shot8.txt", scale=opt.scale, transform=data_transform)
+dataset = DyDToF_Dataset(root_path="./dataset/DyDToF/", train=False, txt_file="./data/dydtof_list/school_shot8_val.txt", scale=opt.scale, transform=data_transform)
 
 dataloader = DataLoader(dataset, batch_size=1, shuffle=False, num_workers=8)
 
