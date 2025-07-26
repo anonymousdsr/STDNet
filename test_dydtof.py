@@ -37,7 +37,7 @@ with torch.no_grad():
     net.eval()
     device = torch.device("cuda", 0)
     for idx, data in enumerate(dataloader):
-        print(idx)
+        
         guidance, lr, gt, name = data['guidance'].cuda(), data['lr'].cuda(), data['gt'].cuda(), data['name']
         
         print('%s ******************************** %d' %(name[0], gt.shape[1]))
