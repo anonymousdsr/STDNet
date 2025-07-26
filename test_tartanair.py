@@ -59,8 +59,8 @@ with torch.no_grad():
             #path_save_pred = '{}/{:06d}_left_depth.npy'.format(path_output, i)
             #np.save(path_save_pred, output_i.detach().cpu().numpy())
 
-        print('Scene:%s Seq_len:%d MAE:%f' % (name[0], restored.shape[0], mae_avg[idx]))
-        print('Scene:%s Seq_len:%d RMSE:%f' % (name[0], restored.shape[0], rmse_avg[idx]))
+        print('Scene:%s Seq_len:%d MAE:%.2f' % (name[0], restored.shape[0], mae_avg[idx]))
+        print('Scene:%s Seq_len:%d RMSE:%.2f' % (name[0], restored.shape[0], rmse_avg[idx]))
         print("***************************************************")
 
 
