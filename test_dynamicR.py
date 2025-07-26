@@ -54,8 +54,8 @@ with torch.no_grad():
         #     path_save_pred = '{}/processed_029beb-3_obj_source_left_{:04d}.geometric.npy'.format(path_output, i)# processed_029beb-3_obj_source_left_   processed_01f258-3_obj_source_left_
         #     np.save(path_save_pred, output_i.detach().cpu().numpy())
 
-        print('Scene:%s Seq_len:%d AE:%f' % (name[0], restored.shape[0], mae_avg[idx]))
-        print('Scene:%s Seq_len:%d RMSE:%f' % (name[0], restored.shape[0], rmse_avg[idx]))
+        print('Scene:%s Seq_len:%d AE:%.2f' % (name[0], restored.shape[0], mae_avg[idx]))
+        print('Scene:%s Seq_len:%d RMSE:%.2f' % (name[0], restored.shape[0], rmse_avg[idx]))
         print("***************************************************")
 
 
