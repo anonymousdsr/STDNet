@@ -1,0 +1,5 @@
+[Train]]
+python -m torch.distributed.launch --nproc_per_node 2 train_tartanair_saveMAE_IntraInterdiffLoss2_0.005_UDL.py --scale 4 --result_root 'experiment/UDL3_X4_new' --result_root_MAE 'experiment/UDL3_X4_new/MAE_best'
+
+
+[Test]
