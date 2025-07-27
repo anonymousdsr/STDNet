@@ -70,7 +70,7 @@ train_dataset = Tartanair_Dataset(root_path="/opt/data/private/dataset/VDSRDatas
                                   txt_file="./data/tartanair_train.txt", transform=data_transform,
                                   scale=opt.scale)
 test_dataset = Tartanair_Dataset(root_path="/opt/data/private/dataset/VDSRDataset/TartanAir/", train=False,
-                                 txt_file="./data/tartanair_val.txt", transform=data_transform,
+                                 txt_file="./data/tartanair_test.txt", transform=data_transform,
                                  scale=opt.scale)
 
 if torch.cuda.device_count() > 1:
