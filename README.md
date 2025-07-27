@@ -23,7 +23,7 @@ All datasets can be downloaded from the following link:
 
 [DynamicReplica](https://dynamic-stereo.github.io/)
 
-Additionally, we provide a DyDToF test subset in the ``'dataset'`` folder for quick implementation, with the corresponding index file is ``'data/DyDToF_subnet.txt'``.
+Additionally, we provide a DyDToF test subset in the ``'dataset'`` folder for quick implementation, with the corresponding index file is ``'data/dydtof_list/school_shot8_subset.txt'``.
 
 ## Training
 
