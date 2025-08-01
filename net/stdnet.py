@@ -12,12 +12,12 @@ class KGenerator(nn.Module):
         super(KGenerator, self).__init__()
         self.kernel_size = kernel_size
         self.act = nn.LeakyReLU(negative_slope=0.1, inplace=True)
-        self.sekg = ResidualGroup(default_conv, in_channels, kernel_size=3, reduction=16, n_resblocks=1)
+        self.rg = ResidualGroup(default_conv, in_channels, kernel_size=3, reduction=16, n_resblocks=1)
         self.conv = nn.Conv2d(in_channels, in_channels * kernel_size * kernel_size, 1, 1, 0)
 
     def forward(self, input_x):
         b, c, h, w = input_x.size()
-        x = self.sekg(input_x)
+        x = self.rg(input_x)
         x = self.conv(self.act(x))
         filter_x = x.reshape([b, c, self.kernel_size * self.kernel_size, h, w])
 
