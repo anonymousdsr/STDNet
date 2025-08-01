@@ -32,7 +32,7 @@ class SDM(nn.Module):
         self.act = nn.LeakyReLU(negative_slope=0.1, inplace=True)
         self.conv_diff = default_conv(out_nfeats, out_nfeats, 3)
         self.conv_du = nn.Conv2d(2, out_nfeats, kernel_size=3, padding=1, bias=True)
-        self.afg = KGenerator(out_nfeats, 3)
+        self.kg = KGenerator(out_nfeats, 3)
         self.rg = ResidualGroup(default_conv, 2 * out_nfeats, kernel_size=3, reduction=16, n_resblocks=1)
         self.unfold = nn.Unfold(kernel_size=3, dilation=1, padding=1, stride=1)
 
@@ -50,7 +50,7 @@ class SDM(nn.Module):
             (h, w), mode='bilinear', align_corners=False))
 
         diff_intra_f = self.conv_diff(self.act(diff_intra))
-        filter_x = self.afg(diff_intra_f)
+        filter_x = self.kg(diff_intra_f)
         unfold_x = self.unfold(rgb_feat).reshape(b, c, -1, h, w)
         out_rgb = (unfold_x * filter_x).sum(2)
 
