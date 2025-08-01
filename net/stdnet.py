@@ -7,9 +7,9 @@ from .common import PixelShufflePack, ResidualBlocksWithInputConv
 from .common.diff import *
 import torch.nn.functional as F
 
-class AFG(nn.Module):
+class KGenerator(nn.Module):
     def __init__(self, in_channels=64, kernel_size=3):
-        super(AFG, self).__init__()
+        super(KGenerator, self).__init__()
         self.kernel_size = kernel_size
         self.act = nn.LeakyReLU(negative_slope=0.1, inplace=True)
         self.sekg = ResidualGroup(default_conv, in_channels, kernel_size=3, reduction=16, n_resblocks=1)
@@ -32,7 +32,7 @@ class SDM(nn.Module):
         self.act = nn.LeakyReLU(negative_slope=0.1, inplace=True)
         self.conv_diff = default_conv(out_nfeats, out_nfeats, 3)
         self.conv_du = nn.Conv2d(2, out_nfeats, kernel_size=3, padding=1, bias=True)
-        self.afg = AFG(out_nfeats, 3)
+        self.afg = KGenerator(out_nfeats, 3)
         self.rg = ResidualGroup(default_conv, 2 * out_nfeats, kernel_size=3, reduction=16, n_resblocks=1)
         self.unfold = nn.Unfold(kernel_size=3, dilation=1, padding=1, stride=1)
 
